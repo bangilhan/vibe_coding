@@ -2,14 +2,19 @@
 
 import { BarChart as RechartsBarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
+interface ChartData {
+  name: string;
+  [key: string]: string | number;
+}
+
 interface BarChartProps {
-  data: any[];
+  data: ChartData[];
   dataKey: string;
   name: string;
   color?: string;
 }
 
-export default function BarChart({ data, dataKey, name, color = '#10B981' }: BarChartProps) {
+export default function BarChart({ data, dataKey, color = '#10B981' }: BarChartProps) {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <RechartsBarChart data={data}>

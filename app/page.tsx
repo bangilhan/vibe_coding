@@ -6,7 +6,6 @@ import {
   Clock, 
   Bug, 
   TrendingUp, 
-  Users, 
   Activity,
   BarChart3
 } from 'lucide-react';

@@ -2,14 +2,19 @@
 
 import { LineChart as RechartsLineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
+interface ChartData {
+  name: string;
+  [key: string]: string | number;
+}
+
 interface LineChartProps {
-  data: any[];
+  data: ChartData[];
   dataKey: string;
   name: string;
   color?: string;
 }
 
-export default function LineChart({ data, dataKey, name, color = '#3B82F6' }: LineChartProps) {
+export default function LineChart({ data, dataKey, color = '#3B82F6' }: LineChartProps) {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <RechartsLineChart data={data}>
